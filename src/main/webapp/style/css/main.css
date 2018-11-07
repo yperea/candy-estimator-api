@@ -1,0 +1,148 @@
+/*
+  Project Quiron
+  Author: Yesid Perea
+  Date: 09/28/2018
+*/
+
+header, footer, nav, section, article, aside {
+    display: block;
+}
+
+body {
+    /*margin: 1em;*/
+    /*color: #000000;
+    font-family: Calibri, Arial, sans-serif;
+    background-color: white;
+    font-size: 1rem;
+    */
+}
+
+footer {
+    border-top: 1px solid #777777;
+    margin-top: 5rem;
+    padding-top: 2rem;
+}
+
+/*
+.form-control {
+    display: inline;
+}
+*/
+
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.my-logo {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    margin-top: -10px;
+    overflow: hidden;
+}
+
+/*-----------------------------*/
+/*SECCION DEL USUARIO*/
+.navbar-nav .user-menu .user-image {
+    float: left;
+    width: 2rem;/*30px;*/
+    height: 2rem;/*30px;*/
+    border-radius: 50%;
+    margin-top: -2px;
+}
+
+.navbar-nav  .user-menu  .dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 240px;
+    height: 230px;
+    position: absolute;
+    right: 0px;
+    left: auto;
+}
+
+.navbar-nav  .user-menu  .dropdown-menu  li.my-user-header  img {
+    height: 90px;
+    width: 90px;
+    border: 3px solid;
+    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-nav  .user-menu .dropdown-menu  li.my-user-header {
+    height: 175px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+.navbar-nav  .user-menu  .dropdown-menu  li.my-user-footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+.navbar-brand {
+    display: inline-block;
+    margin-right: 1rem;
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.dropdown-menu.pull-right {
+    /*right: 0;*/
+    left: auto;
+}
+
+.pull-right {
+    float: right!important;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    border-bottom: 1px solid #d2d6da;
+}
