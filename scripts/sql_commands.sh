@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS estimates_history (
   candy_per_children DECIMAL NULL DEFAULT 0,
   children_population INT NULL DEFAULT 0,
   address NVARCHAR(215) NOT NULL,
-  country NVARCHAR(3) NOT NULL,
+  country NVARCHAR(3) NOT NULL DEFAULT 'USA',
   latitude DECIMAL NULL,
   longitude DECIMAL NULL,
   created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -171,7 +171,7 @@ USE pktydb;
 INSERT INTO estimates_history (id, user_id, candy_per_children, children_population, address, country, latitude, longitude, created) VALUES (DEFAULT, 1, 5, 274, '2935 Broadbridge Ave, Stratford, CT', 'USA', NULL, NULL, DEFAULT);
 INSERT INTO estimates_history (id, user_id, candy_per_children, children_population, address, country, latitude, longitude, created) VALUES (DEFAULT, 2, 10, 190, '1701 Wright Street, Madison, Wisconsin 53704', 'USA', NULL, NULL, DEFAULT);
 INSERT INTO estimates_history (id, user_id, candy_per_children, children_population, address, country, latitude, longitude, created) VALUES (DEFAULT, 3, 15, 40, '223 W Main St, Madison, WI 53703', 'USA', NULL, NULL, DEFAULT);
-INSERT INTO estimates_history (id, user_id, candy_per_children, children_population, address, country, latitude, longitude, created) VALUES (DEFAULT, 4, 5, 240, '201 S Gammon Rd, Madison, WI 53717', DEFAULT, NULL, NULL, DEFAULT);
+INSERT INTO estimates_history (id, user_id, candy_per_children, children_population, address, country, latitude, longitude, created) VALUES (DEFAULT, 4, 5, 240, '201 S Gammon Rd, Madison, WI 53717', 'USA', NULL, NULL, DEFAULT);
 
 COMMIT;
 
