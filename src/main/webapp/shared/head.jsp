@@ -1,4 +1,4 @@
-<c:set var="root" value="/candyestimator" scope="session" />
+<c:set var="root" value="/candy-estimator" scope="session" />
 <c:set var="title" value="Halloween Candy Estimator" scope="session" />
 
 <%@include file="meta.jsp"%>
