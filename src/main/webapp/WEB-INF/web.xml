@@ -5,4 +5,28 @@
          version="3.1">
 
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/signInController</form-login-page>
+      <form-error-page>/public/signin.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <!-- Protect home page directory. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>investing</web-resource-name>
+      <url-pattern>/search.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
 </web-app>
