@@ -28,10 +28,11 @@ public class EstimateHistory {
 
     @NonNull
     @Column(name = "candy_per_children")
-    private String candyPerChild;
+    private int candyPerChild;
 
+    @NonNull
     @Column(name = "children_population")
-    private String childrenPopulation;
+    private int childrenPopulation;
 
     @NonNull
     @Column(name = "address")
@@ -42,10 +43,10 @@ public class EstimateHistory {
     private String country;
 
     @Column(name = "latitude")
-    private Double latitude;
+    private double latitude;
 
     @Column(name = "longitude")
-    private Double longitude;
+    private double longitude;
 
     @NonNull
     @EqualsAndHashCode.Exclude
