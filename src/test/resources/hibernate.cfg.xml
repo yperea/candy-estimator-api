@@ -18,6 +18,7 @@
 
         <mapping class="com.pkty.domain.Role" />
         <mapping class="com.pkty.domain.User" />
+        <mapping class="com.pkty.domain.EstimateHistory" />
 
     </session-factory>
 </hibernate-configuration>
