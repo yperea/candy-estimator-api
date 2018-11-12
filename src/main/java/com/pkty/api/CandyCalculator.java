@@ -1,5 +1,6 @@
 package com.pkty.api;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pkty.application.EntityManager;
@@ -29,14 +30,24 @@ public class CandyCalculator {
         String apikey = request.getParameter("apikey");
         String address = request.getParameter("address");
         int avgcandy = Integer.parseInt(request.getParameter("avgcandy"));
+        String candyToBuyJSON;
 
         ObjectMapper objectMapper = new ObjectMapper();
         //EntityDAO userDao = new EntityDAO("Put the class Yesid makes here!");
 
+        User user = (User) ManagerFactory.getManager(User.class).get(username);
 
         //Validate User with apikey
+        if (user.getApiKey == apikey) {
+            //Call yesids methods to pass on address and avgcandy
+            GeoLifeManager geoLifeManager = new GeoLifeManager("/geoLife.properties");
+            ChildrenPopulation childrenPopulation = geoLifeManager.getChildrenPopulationByAddress(address, "US");
+            candyToBuyJSON = objectMapper.writeValueAsString(childrenPopulation.getCount() * avgcandy);
+        } else {
+            candyToBuyJSON = objectMapper.writeValueAsString("Incorrect api key");
+        }
 
-        //Call yesids methods to pass on address and avgcandy
+
 
         //Store the info in the database with the Entity Dao
 
@@ -44,9 +55,9 @@ public class CandyCalculator {
 //        estimateHistory.set
 //        EntityManager<EstimateHistory> historyManager = ManagerFactory.getManager(EstimateHistory.class);
 //        EstimateHistory.create();
+//        String candyToBuyJSON = objectMapper.writeValueAsString("here is the calculation i want to return");
 
-        String json = objectMapper.writeValueAsString("here is the calculation i want to return");
-        return Response.status(200).entity(json).build();
+        return Response.status(200).entity(candyToBuyJSON).build();
     }
 
 }
