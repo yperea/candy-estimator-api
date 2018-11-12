@@ -47,10 +47,7 @@ public class CandyCalculator {
             candyToBuyJSON = objectMapper.writeValueAsString("Incorrect api key");
         }
 
-
-
-        //Store the info in the database with the Entity Dao
-
+//        Store the info in the database with the Entity Dao
 //        EstimateHistory estimateHistory = new EstimateHistory();
 //        estimateHistory.set
 //        EntityManager<EstimateHistory> historyManager = ManagerFactory.getManager(EstimateHistory.class);
