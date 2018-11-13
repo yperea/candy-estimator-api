@@ -4,7 +4,9 @@ package com.pkty.api;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pkty.application.EntityManager;
+import com.pkty.application.GeoLifeManager;
 import com.pkty.domain.User;
+import com.pkty.domain.ChildrenPopulation;
 import com.pkty.persistance.EntityDAO;
 import com.pkty.shared.ManagerFactory;
 
@@ -16,6 +18,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.io.IOException;
 
 @Path("/candycalculator")
 public class CandyCalculator {
@@ -24,7 +27,7 @@ public class CandyCalculator {
     @Produces({MediaType.APPLICATION_JSON})
     @Path("")
     public Response getUsersList(@Context HttpServletRequest request)
-            throws JsonProcessingException {
+            throws JsonProcessingException, IOException{
 
         String username = request.getParameter("username");
         String apikey = request.getParameter("apikey");
@@ -34,14 +37,20 @@ public class CandyCalculator {
 
         ObjectMapper objectMapper = new ObjectMapper();
         //EntityDAO userDao = new EntityDAO("Put the class Yesid makes here!");
+        EntityDAO userDao = new EntityDAO(User.class);
 
-        User user = (User) ManagerFactory.getManager(User.class).get(username);
+        List<User> users = userDao.getByPropertyLike("username", username);
+        User user = users.get(0);
+
+        //User user = (User) ManagerFactory.getManager(User.class).get(username);
 
         //Validate User with apikey
-        if (user.getApiKey == apikey) {
+
+
+        if (user.getApiKey().equals(apikey)) {
             //Call yesids methods to pass on address and avgcandy
             GeoLifeManager geoLifeManager = new GeoLifeManager("/geoLife.properties");
-            ChildrenPopulation childrenPopulation = geoLifeManager.getChildrenPopulationByAddress(address, "US");
+            ChildrenPopulation childrenPopulation = geoLifeManager.getChildrenPopulationByAddress(address, "USA");
             candyToBuyJSON = objectMapper.writeValueAsString(childrenPopulation.getCount() * avgcandy);
         } else {
             candyToBuyJSON = objectMapper.writeValueAsString("Incorrect api key");
