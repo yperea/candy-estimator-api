@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
+import java.io.*;
 
 /**
  * A simple servlet to sign in the user.
@@ -36,10 +37,11 @@ public class signupController extends HttpServlet {
         LocalDate today = LocalDate.now();
         User newUser = null;
         Boolean userOkay = false;
+        String responseMessage = "Sorry, Please Try Again";
         int newUserId;
 
         try {
-            System.out.println("made it to servlet");
+            //Check any fields are empty
             if (fName.isEmpty() || lName.isEmpty() || uName.isEmpty() || pWord.isEmpty() || confirm.isEmpty()) {
 
             } else if (!(pWord.equals(confirm))) {
@@ -52,14 +54,20 @@ public class signupController extends HttpServlet {
                 newUser = new User(fName, lName, uName, pWord);
                 newUserId = userDao.insert(newUser);
 
+                responseMessage = "SUCCESS!";
+
             }
+
         }
         catch(Exception e){
             e.printStackTrace();
             //LOG MESSAGE
         }
-
         resp.setHeader("Refresh", "3; URL=signin.jsp");
+        resp.setContentType("text/html");
+        PrintWriter  out  = resp.getWriter();
+        out.print("<h1>" + responseMessage + "</h1>");
+        out.close();
 
     }
 }

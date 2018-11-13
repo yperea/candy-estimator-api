@@ -7,13 +7,13 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <!-- Tell the server to use form-based authentication. -->
-  <login-config>
+  <!--<login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/signInController</form-login-page>
+      <form-login-page>/signinController</form-login-page>
       <form-error-page>/public/signin.jsp</form-error-page>
     </form-login-config>
-  </login-config>
+  </login-config> -->
 
   <!-- Protect home page directory. -->
   <security-constraint>
