@@ -32,21 +32,18 @@ public class CandyCalculator {
         String username = request.getParameter("username");
         String apikey = request.getParameter("apikey");
         String address = request.getParameter("address");
+        //String countryAbberv = request.getParameter("country");
         int avgcandy = Integer.parseInt(request.getParameter("avgcandy"));
         String candyToBuyJSON;
 
         ObjectMapper objectMapper = new ObjectMapper();
-        //EntityDAO userDao = new EntityDAO("Put the class Yesid makes here!");
         EntityDAO userDao = new EntityDAO(User.class);
 
         List<User> users = userDao.getByPropertyLike("username", username);
         User user = users.get(0);
-
         //User user = (User) ManagerFactory.getManager(User.class).get(username);
 
         //Validate User with apikey
-
-
         if (user.getApiKey().equals(apikey)) {
             //Call yesids methods to pass on address and avgcandy
             GeoLifeManager geoLifeManager = new GeoLifeManager("/geoLife.properties");
