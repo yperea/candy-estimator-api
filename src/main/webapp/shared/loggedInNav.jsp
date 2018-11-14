@@ -80,17 +80,8 @@
                     <%--</c:when>--%>
 
                     <%--<c:otherwise>--%>
-                        <c:choose>
-                            <c:when test="${signedIn}">
-                            <li class="nav-item"><a class="nav-link" href="public/signin.jsp">Log&nbsp;Out</a></li>
-                        </c:when>
-                            <c:otherwise>
-                                <li class="nav-item"><a class="nav-link" href="public/signup.jsp">Sign&nbsp;Up</a></li>
-                                <li class="nav-item"><a class="nav-link" href="public/signin.jsp">Log&nbsp;In</a></li>
-                            </c:otherwise>
-
-                        </c:choose>
-
+                        <li class="nav-item"><a class="nav-link" href="public/signup.jsp">Sign&nbsp;Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="public/signin.jsp">Log&nbsp;In</a></li>
                     <%--</c:otherwise>
                 </c:choose>--%>
 

@@ -46,7 +46,7 @@
 <body class="text-center">
 
 
-<form class="form-signin" action="j_security_check" method="POST">
+<form class="form-signin" action="signinController" method="POST">
     <img class="mb-4" src="../style/img/candyestimatorIcon75x75.png.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
@@ -66,10 +66,10 @@
     <c:remove var="message" scope="session" />
 --%>
 
-    <label for="username" class="sr-only">Email address</label>
-    <input type="text" id="username" name="j_username" class="form-control" placeholder="Username" required autofocus>
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" name="userName" class="form-control" placeholder="Username" required autofocus>
     <label for="password" class="sr-only">Password</label>
-    <input type="password" id="password" name="j_password" class="form-control" placeholder="Password" required>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
     <!--
     <div class="checkbox mb-3">
         <label>

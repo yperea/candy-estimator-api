@@ -947,16 +947,19 @@
       <Position>6</Position>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;USA&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="238" parent="227" name="latitude">
       <Position>7</Position>
-      <DataType>decimal(10)|0s</DataType>
+      <DataType>decimal(10,8 digit)|0s</DataType>
+      <DefaultExpression>&apos;0.00000000&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="239" parent="227" name="longitude">
       <Position>8</Position>
-      <DataType>decimal(10)|0s</DataType>
+      <DataType>decimal(11,8 digit)|0s</DataType>
+      <DefaultExpression>&apos;0.00000000&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="240" parent="227" name="created">
@@ -966,7 +969,7 @@
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="241" parent="227" name="fk_estimates_history_users1_idx">
+    <index id="241" parent="227" name="fk_estimates_history_users1">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>

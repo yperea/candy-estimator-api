@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <!--<h4 class="mb-3">Your person</h4>-->
                 <form class="needs-validation"
-                      action="#"
+                      action="signupController"
                       method="POST"
                       novalidate>
                     <div class="row">
