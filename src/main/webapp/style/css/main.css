@@ -146,3 +146,16 @@ footer {
     z-index: 1030;
     border-bottom: 1px solid #d2d6da;
 }
+
+pre {
+    font-size: 1.2em;
+    color: ghostwhite;
+    background-color: rgba(25, 25, 25, .2);
+    width: 80%;
+}
+
+.primary-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}

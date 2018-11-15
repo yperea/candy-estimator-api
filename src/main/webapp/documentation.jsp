@@ -8,7 +8,7 @@
 <body>
 <!-- Navigation -->
 <%@include file="shared/topbar.jsp" %>
-<div class="text-center cover-container d-flex w-100 p-3 mx-auto flex-column">
+<div class="text-center d-flex w-100 p-3 mx-auto flex-column primary-container">
     <br /><br /><br /><br />
     <main role="main" class="inner cover">
         <img class="mb-4" src="style/img/candyestimatorIcon75x75.png" alt="" width="72" height="72">
@@ -80,13 +80,13 @@
             <h3>Sample Responses</h3>
             <div>
                 <h4>Normal Response</h4>
-                <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+                <pre class="pre-scrollable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
                     laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
                     Corporis eligendi nisi unde.</pre>
             </div>
             <div>
                 <h4>Failed Response</h4>
-                <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+                <pre class="pre-scrollable" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
                     laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
                     Corporis eligendi nisi unde.</pre>
             </div>
@@ -96,7 +96,7 @@
         <div>
             <h3>Sample Implementation</h3>
             <p>Description</p>
-            <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+            <pre class="pre-scrollable" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
                     laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
                     Corporis eligendi nisi unde.</pre>
         </div>
