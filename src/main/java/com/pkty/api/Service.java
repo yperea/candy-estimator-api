@@ -15,6 +15,7 @@ public class Service extends Application {
     public Set<Class<?>> getClasses() {
         HashSet hashSet = new HashSet<Class<?>>();
         hashSet.add(Test.class);
+        hashSet.add(CandyCalculator.class);
         return hashSet;
     }
 }
