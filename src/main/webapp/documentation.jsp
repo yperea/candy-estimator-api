@@ -60,7 +60,7 @@
                             Address
                         </td>
                         <td>
-                            A string of text in the format:
+                            A string of text in the format: Street, City, State, Zip Code
                         </td>
                     </tr>
                     <tr>
@@ -73,6 +73,32 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Responses -->
+        <div>
+            <h3>Sample Responses</h3>
+            <div>
+                <h4>Normal Response</h4>
+                <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+                    laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
+                    Corporis eligendi nisi unde.</pre>
+            </div>
+            <div>
+                <h4>Failed Response</h4>
+                <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+                    laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
+                    Corporis eligendi nisi unde.</pre>
+            </div>
+        </div>
+
+        <!-- Implementation -->
+        <div>
+            <h3>Sample Implementation</h3>
+            <p>Description</p>
+            <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
+                    laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
+                    Corporis eligendi nisi unde.</pre>
         </div>
 
 
