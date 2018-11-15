@@ -3,12 +3,18 @@ package com.pkty.entity;
 import lombok.Data;
 
 public @Data class CandyToBuy {
-    private String address;
+    private int kidCount;
     private int candyPerKid;
+    private int candyToBuy;
 
-    public int getCandyToBuy(String address, int candyPerKid) {
+    public CandyToBuy(int kidCount, int candyPerKid) {
+        this.kidCount = kidCount;
+        this.candyPerKid = candyPerKid;
+    }
 
-        return 0;
+    public int CalculateCandyToBuy() {
+        this.candyToBuy = this.kidCount * this.candyPerKid;
+        return candyToBuy;
     }
 
 }
