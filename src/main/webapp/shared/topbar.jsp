@@ -3,7 +3,7 @@
     <div class="container">
 
         <a class="navbar-brand nav-link" href="${root}">
-            <img src="${root}/style/img/candyestimatoricon75x75.png" class="my-logo"/> Halloween Candy Estimator API
+            <img src="${root}/style/img/candyestimatorIcon75x75.png" class="my-logo"/> Halloween Candy Estimator API
         </a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
