@@ -119,11 +119,10 @@ public class EntityDAO<T> {
      */
     public int insert(T entity) {
         int id = 0;
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
+        session = getSession();
+        transaction = session.beginTransaction();
         id = (int)session.save(entity);
-        transaction.commit();
-        session.close();
+        logger.trace("insert(T): Inserting the <T> BusinessEntity.");
         return id;
     }
 
