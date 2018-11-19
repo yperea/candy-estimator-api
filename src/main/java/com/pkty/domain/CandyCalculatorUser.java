@@ -22,7 +22,7 @@ public class CandyCalculatorUser {
 
         Object json = mapper.readValue(jsonResponse, Object.class);
 
-        String functionalResponse = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+        response = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 
         return response;
     }

@@ -37,7 +37,8 @@ public class DocumentationSampleDisplayer extends HttpServlet {
         CandyCalculatorUser candyCalculatorUser = new CandyCalculatorUser();
 
         req.setAttribute("functionalResponse", candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
-        //req.setAttribute("missingUsernameResponse", candyCalculatorUser.returnFormattedJsonResponse(missingUsernameCall));
+        req.setAttribute("missingUsernameResponse", candyCalculatorUser.returnFormattedJsonResponse(missingUsernameCall));
+        req.setAttribute("wrongApiKeyResponse", candyCalculatorUser.returnFormattedJsonResponse(wrongApiKeyCall));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/documentation.jsp");
         dispatcher.forward(req, resp);
