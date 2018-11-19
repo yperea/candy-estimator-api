@@ -8,7 +8,7 @@
 <body>
 <!-- Navigation -->
 <%@include file="shared/topbar.jsp" %>
-<div class="text-center d-flex w-100 p-3 mx-auto flex-column primary-container">
+<div class="text-center d-flex w-100 p-3 mx-auto flex-column">
     <br /><br /><br /><br />
     <main role="main" class="inner cover">
         <img class="mb-4" src="style/img/candyestimatorIcon75x75.png" alt="" width="72" height="72">
@@ -25,7 +25,7 @@
         <!-- Example URL -->
         <div>
             <h3>Example URL</h3>
-            <pre>Placeholder URL</pre>
+            <pre>http://18.191.31.27:8080/candy-estimator/service/candycalculator?username=tdombrowski&apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT</pre>
         </div>
 
         <!-- Parameters -->
