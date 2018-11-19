@@ -80,12 +80,10 @@
             <h3>Sample Responses</h3>
             <div>
                 <h4>Normal Response</h4>
-                <pre class="pre-scrollable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
-                    laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
-                    Corporis eligendi nisi unde.</pre>
+                <pre class="pre-scrollable">${functionalUrl}</pre>
             </div>
             <div>
-                <h4>Failed Response</h4>
+                <h4>Failed Response: Missing a Parameter</h4>
                 <pre class="pre-scrollable" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
                     laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
                     Corporis eligendi nisi unde.</pre>

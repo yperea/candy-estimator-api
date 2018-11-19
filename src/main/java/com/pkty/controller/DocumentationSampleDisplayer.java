@@ -31,11 +31,13 @@ public class DocumentationSampleDisplayer extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String functionalUrl = "localhost:8080/candy-estimator/service/candycalculator?username=tdombrowski&"
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String functionalCall = "localhost:8080/candy-estimator/service/candycalculator?username=tdombrowski&"
             + "apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";
-        String missingUsernameUrl = "";
-        String wrongApiKeyUrl = "";
+        String missingUsernameCall = "";
+        String wrongApiKeyCall = "";
+
+        req.setAttribute("functionalUrl", functionalCall);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/documentation.jsp");
         dispatcher.forward(req, resp);
