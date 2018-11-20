@@ -8,8 +8,18 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
+/**
+ * This class is used to interact with our own CandyCalculator api.
+ */
 public class CandyCalculatorUser {
 
+    /**
+     * Utilizes a given url with the candy calculator api. The response is returned as a formatted json string.
+     *
+     * @param url the url being used to access the service
+     * @return response the json response
+     * @throws IOException
+     */
     public String returnFormattedJsonResponse(String url) throws IOException {
         String response = "";
 

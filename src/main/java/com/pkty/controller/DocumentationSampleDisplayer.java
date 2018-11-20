@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * Used to retrieve the json responses for the documentation page.
+ *
  * @author tdombrowski
  */
 
@@ -27,14 +28,18 @@ public class DocumentationSampleDisplayer extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String functionalCall = "http://18.191.31.27:8080/candy-estimator/service/candycalculator?username=tdombrowski&"
+        String base = "localhost";
+
+        String functionalCall = base + ":8080/candy-estimator/service/candycalculator?username=tdombrowski&"
             + "apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";
-        String missingUsernameCall = "http://18.191.31.27:8080/candy-estimator/service/candycalculator?"
+        String missingUsernameCall = base + ":8080/candy-estimator/service/candycalculator?"
                             + "apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";
-        String wrongApiKeyCall = "http://18.191.31.27:8080/candy-estimator/service/candycalculator?username=tdombrowski&"
+        String wrongApiKeyCall = base + ":8080/candy-estimator/service/candycalculator?username=tdombrowski&"
                             + "apikey=supersecret3&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";
 
         CandyCalculatorUser candyCalculatorUser = new CandyCalculatorUser();
+
+        logger.info("CandyCalculatorUser results: " + candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
 
         req.setAttribute("functionalResponse", candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
         req.setAttribute("missingUsernameResponse", candyCalculatorUser.returnFormattedJsonResponse(missingUsernameCall));
