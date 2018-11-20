@@ -37,13 +37,13 @@ public class DocumentationSampleDisplayer extends HttpServlet {
         String wrongApiKeyCall = base + ":8080/candy-estimator/service/candycalculator?username=tdombrowski&"
                             + "apikey=supersecret3&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";
 
-        CandyCalculatorUser candyCalculatorUser = new CandyCalculatorUser();
+        //CandyCalculatorUser candyCalculatorUser = new CandyCalculatorUser();
 
-        logger.info("CandyCalculatorUser results: " + candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
+        //logger.info("CandyCalculatorUser results: " + candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
 
-        req.setAttribute("functionalResponse", candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
-        req.setAttribute("missingUsernameResponse", candyCalculatorUser.returnFormattedJsonResponse(missingUsernameCall));
-        req.setAttribute("wrongApiKeyResponse", candyCalculatorUser.returnFormattedJsonResponse(wrongApiKeyCall));
+        //req.setAttribute("functionalResponse", candyCalculatorUser.returnFormattedJsonResponse(functionalCall));
+        //req.setAttribute("missingUsernameResponse", candyCalculatorUser.returnFormattedJsonResponse(missingUsernameCall));
+        //req.setAttribute("wrongApiKeyResponse", candyCalculatorUser.returnFormattedJsonResponse(wrongApiKeyCall));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/documentation.jsp");
         dispatcher.forward(req, resp);

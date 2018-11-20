@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <div id="documentationMenu">
+        <div id="documentationMenu" class="col-md-3">
             <ul>
                 <li><a href="#sampleURL">Sample Url</a></li>
                 <li><a href="#parameters">Parameters</a></li>
@@ -37,7 +37,7 @@
         <!-- Parameters -->
         <div id="parameters">
             <h3>Parameters</h3>
-            <table class="table table-dark table-striped">
+            <table id="parameterTable" class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th>Parameter</th>
@@ -101,7 +101,7 @@
         <!-- Implementation -->
         <div id="sampleImplementation">
             <h3>Sample Implementation</h3>
-            <p>Description</p>
+            <p>Here's an example of how to implement this API using Java.</p>
             <pre class="pre-scrollable" >
                 import com.fasterxml.jackson.databind.ObjectMapper;
 

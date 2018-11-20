@@ -151,5 +151,24 @@ pre {
     font-size: 1.2em;
     color: ghostwhite;
     background-color: rgba(25, 25, 25, .2);
-    width: 80%;
+}
+
+#documentationMenu {
+    text-align: left;
+    background-color: rgba(75, 75, 75, .25);
+    border: 1px solid #d2d6da;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sampleImplementation, #parameters, #sampleResponses, #sampleURL {
+    margin-top: 50px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.3em;
 }
