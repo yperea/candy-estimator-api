@@ -166,7 +166,7 @@ h4 {
 }
 
 #documentationMenu {
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: left;
     background-color: rgba(75, 75, 75, .25);
     border: 1px solid #d2d6da;
@@ -175,4 +175,8 @@ h4 {
     margin-bottom: 25px;
     margin-top: 25px;
     padding: 20px;
+}
+
+#documentationDescription {
+    margin-top: 100px;
 }

@@ -6,8 +6,9 @@
 </head>
 
 <body>
+<div class="documentationContainer">
 <!-- Navigation -->
-
+<%@include file="shared/topbar.jsp" %>
 <div class="text-center d-flex w-100 p-3 mx-auto flex-column">
     <br /><br /><br /><br />
     <main role="main" class="inner cover">
@@ -190,5 +191,6 @@
 </div>
 <%@include file="shared/cdn-jss.jsp"%>
 <%--<%@include file="shared/footer.jsp"%>--%>
+</div>
 </body>
 </html>
