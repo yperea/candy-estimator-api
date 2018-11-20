@@ -28,7 +28,7 @@ public class DocumentationSampleDisplayer extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String base = "localhost";
+        String base = "http://18.191.31.27";
 
         String functionalCall = base + ":8080/candy-estimator/service/candycalculator?username=tdombrowski&"
             + "apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT";

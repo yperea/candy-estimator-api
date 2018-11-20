@@ -11,9 +11,6 @@
 <div class="text-center d-flex w-100 p-3 mx-auto flex-column">
     <br /><br /><br /><br />
     <main role="main" class="inner cover">
-        <img class="mb-4" src="style/img/candyestimatorIcon75x75.png" alt="" width="72" height="72">
-        <br />
-
         <!-- Description -->
         <div>
             <p>
@@ -22,14 +19,23 @@
             </p>
         </div>
 
+        <div id="documentationMenu">
+            <ul>
+                <li><a href="#sampleURL">Sample Url</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#sampleResponses">Sample Responses</a></li>
+                <li><a href="#sampleImplementation">Sample Implementation</a></li>
+            </ul>
+        </div>
+
         <!-- Example URL -->
-        <div>
-            <h3>Example URL</h3>
+        <div id="sampleURL">
+            <h3>Sample URL</h3>
             <pre>http://18.191.31.27:8080/candy-estimator/service/candycalculator?username=tdombrowski&apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT</pre>
         </div>
 
         <!-- Parameters -->
-        <div>
+        <div id="parameters">
             <h3>Parameters</h3>
             <table class="table table-dark table-striped">
                 <thead>
@@ -76,7 +82,7 @@
         </div>
 
         <!-- Responses -->
-        <div>
+        <div id="sampleResponses">
             <h3>Sample Responses</h3>
             <div>
                 <h4>Normal Response</h4>
@@ -93,12 +99,70 @@
         </div>
 
         <!-- Implementation -->
-        <div>
+        <div id="sampleImplementation">
             <h3>Sample Implementation</h3>
             <p>Description</p>
-            <pre class="pre-scrollable" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi eligendi iste labore
-                    laboriosam nemo non quaerat repellat voluptates! Dolore earum harum illum minima quidem quis?
-                    Corporis eligendi nisi unde.</pre>
+            <pre class="pre-scrollable" >
+                import com.fasterxml.jackson.databind.ObjectMapper;
+
+                import javax.ws.rs.client.Client;
+                import javax.ws.rs.client.ClientBuilder;
+                import javax.ws.rs.client.WebTarget;
+                import javax.ws.rs.core.MediaType;
+                import java.io.IOException;
+
+                public class CandyCalculatorUser {
+
+                    private static final String API_KEY = "yourapikey";
+                    private static final String USERNAME = "yourusername";
+
+                    private static final String WEB_URL = "http://18.191.31.27:8080/candy-estimator/service/candycalculator/?";
+
+                    /**
+                     * Constructs the url used to make the call.
+                     *
+                     * @param address the address
+                     * @param country the country
+                     * @param candyPerChild the candy per child
+                     * @return url the url
+                     */
+                    private String constructApiAUrl(String address, String country, String candyPerChild) {
+                        String url = WEB_URL + "username=" + USERNAME + "&apikey=" + API_KEY + "&country=" + country + "&address=" + address
+                                + "&avgcandy=" + candyPerChild;
+
+                        return url;
+                    }
+
+                    /**
+                     * Utilizes a given url with the candy calculator api. The response is returned as a formatted json string.
+                     *
+                     * @param address the address
+                     * @param country the country
+                     * @param candyPerChild the candy per child
+                     * @return response the json response
+                     * @throws IOException
+                     */
+                    public String retrieveResponse(String address, String country, String candyPerChild) throws IOException {
+                        String url = constructApiAUrl(address, country, candyPerChild);
+                        String response = "";
+
+                        Client client = ClientBuilder.newClient();
+
+                        WebTarget target = client.target(url);
+
+                        String jsonResponse = target.request(MediaType.APPLICATION_JSON).get(String.class);
+
+                        ObjectMapper mapper = new ObjectMapper();
+
+                        Object json = mapper.readValue(jsonResponse, Object.class);
+
+                        response = mapper.writeValueAsString(json);
+
+                        return response;
+                    }
+
+                }
+            </pre>
         </div>
 
 
