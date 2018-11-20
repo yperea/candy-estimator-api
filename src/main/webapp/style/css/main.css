@@ -153,15 +153,7 @@ pre {
     background-color: rgba(25, 25, 25, .2);
 }
 
-#documentationMenu {
-    text-align: left;
-    background-color: rgba(75, 75, 75, .25);
-    border: 1px solid #d2d6da;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#sampleImplementation, #parameters, #sampleResponses, #sampleURL {
+#sampleImplementation, #parameters, #sampleResponses, #sampleURL, #documentationDescription {
     margin-top: 50px;
     width: 60%;
     margin-right: auto;
@@ -171,4 +163,16 @@ pre {
 
 h4 {
     font-size: 1.3em;
+}
+
+#documentationMenu {
+    font-size: 1.3em;
+    text-align: left;
+    background-color: rgba(75, 75, 75, .25);
+    border: 1px solid #d2d6da;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 20px;
 }

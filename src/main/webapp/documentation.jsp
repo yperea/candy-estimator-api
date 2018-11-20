@@ -7,25 +7,27 @@
 
 <body>
 <!-- Navigation -->
-<%@include file="shared/topbar.jsp" %>
+
 <div class="text-center d-flex w-100 p-3 mx-auto flex-column">
     <br /><br /><br /><br />
     <main role="main" class="inner cover">
         <!-- Description -->
-        <div>
+        <div id="documentationDescription">
             <p>
                 This service returns an estimation of the number of candy you'll want this halloween based off the number
                 of children (under the age of 14) in your neighborhood.
             </p>
         </div>
 
-        <div id="documentationMenu" class="col-md-3">
-            <ul>
-                <li><a href="#sampleURL">Sample Url</a></li>
-                <li><a href="#parameters">Parameters</a></li>
-                <li><a href="#sampleResponses">Sample Responses</a></li>
-                <li><a href="#sampleImplementation">Sample Implementation</a></li>
-            </ul>
+        <div id="documentationMenu" class="col-md-2">
+            <div>
+                <ul>
+                    <li><a href="#sampleURL">Sample URL</a></li>
+                    <li><a href="#parameters">Parameters</a></li>
+                    <li><a href="#sampleResponses">Sample Responses</a></li>
+                    <li><a href="#sampleImplementation">Sample Implementation</a></li>
+                </ul>
+            </div>
         </div>
 
         <!-- Example URL -->
@@ -40,6 +42,7 @@
             <table id="parameterTable" class="table table-dark table-striped">
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>Parameter</th>
                         <th>Description</th>
                     </tr>
@@ -50,12 +53,18 @@
                             Username
                         </td>
                         <td>
+                            username
+                        </td>
+                        <td>
                             The username you registered with us.
                         </td>
                     </tr>
                     <tr>
                         <td>
                             API Key
+                        </td>
+                        <td>
+                            apikey
                         </td>
                         <td>
                             The API key that was generated with your account.
@@ -66,12 +75,18 @@
                             Address
                         </td>
                         <td>
+                            address
+                        </td>
+                        <td>
                             A string of text in the format: Street, City, State, Zip Code
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Number of Candy
+                        </td>
+                        <td>
+                            avgcandy
                         </td>
                         <td>
                             The number of candy you plan to hand out to each child.
