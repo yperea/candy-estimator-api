@@ -11,5 +11,8 @@
         <module name="CandyEstimator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="candy-estimator-api" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
