@@ -8,7 +8,7 @@
 <body class="bg-light">
     <!-- Navigation -->
     <%@include file="../shared/topbar.jsp" %>
-
+    <br /><br /><br /><br />
     <div class="container">
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="${root}/style/img/candyestimatorIcon75x75.png" alt="" width="72" height="72">
