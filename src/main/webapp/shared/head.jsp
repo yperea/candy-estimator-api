@@ -16,7 +16,7 @@
 <!-- Bootstrap Dashboard CSS -->
 <link href="${root}/style/css/dashboard.css" rel="stylesheet" />
 <!-- Bootstrap Cover CSS -->
-<link href="${root}/style/css/cover.css" rel="stylesheet" />
+<%--<link href="${root}/style/css/cover.css" rel="stylesheet" />--%>
 <!-- Candy Estimator Style Sheet -->
 <link rel="stylesheet" href="${root}/style/css/main.css" />
 

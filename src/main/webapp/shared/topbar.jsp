@@ -3,7 +3,7 @@
     <div class="container">
 
         <a class="navbar-brand nav-link" href="${root}">
-            <img src="${root}/style/img/candyestimatorIcon75x75.png" class="my-logo"/> Halloween Candy Estimator API
+            <img src="${root}/style/img/candyestimatoricon75x75.png" class="my-logo"/> Halloween Candy Estimator API
         </a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,56 +43,56 @@
                 </li>
                 -->
 
-<%--
-                <c:choose>
-                    <c:when test="${account.signed != null}" >
---%>
-                        <li class="dropdown user-menu">
-                            <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img alt="Profile Picture" class="user-image" src="${root}/style/img/male.jpg" />
-                                &nbsp;<span class="hidden-xs"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="my-user-header">
-                                    <img alt="Profile Picture"
-                                         class="img-circle"
-                                         src="${root}/style/img/male.jpg" />
-                                    <p>
-                                        <%--${account.firstName} ${account.lastName}--%>
-                                        <br/><small>(<%--${account.username}--%>)</small>
-                                    </p>
-                                </li>
-
-                                <li class="my-user-footer">
-
-                                    <div class="pull-left">
-                                        <a href="#"
-                                           class="btn btn-default"><i class="fas fa-user-lock"></i>&nbsp;Account</a>
-                                    </div>
-
-                                    <div class="pull-right">
-                                        <a href="$#"
-                                           class="btn btn-default"><i class="fa fa-power-off"></i>&nbsp;Log Out</a>
-                                    </div>
-                                </li>
-                            </ul>
+                <%--
+                                <c:choose>
+                                    <c:when test="${account.signed != null}" >
+                --%>
+                <li class="dropdown user-menu">
+                    <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img alt="Profile Picture" class="user-image" src="${root}/style/img/male.jpg" />
+                        &nbsp;<span class="hidden-xs"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="my-user-header">
+                            <img alt="Profile Picture"
+                                 class="img-circle"
+                                 src="${root}/style/img/male.jpg" />
+                            <p>
+                                <%--${account.firstName} ${account.lastName}--%>
+                                <br/><small>(<%--${account.username}--%>)</small>
+                            </p>
                         </li>
-                    <%--</c:when>--%>
 
-                    <%--<c:otherwise>--%>
-                        <c:choose>
-                            <c:when test="${signedIn}">
-                            <li class="nav-item"><a class="nav-link" href="public/signin.jsp">Log&nbsp;Out</a></li>
-                        </c:when>
-                            <c:otherwise>
-                                <li class="nav-item"><a class="nav-link" href="public/signup.jsp">Sign&nbsp;Up</a></li>
-                                <li class="nav-item"><a class="nav-link" href="public/signin.jsp">Log&nbsp;In</a></li>
-                            </c:otherwise>
+                        <li class="my-user-footer">
 
-                        </c:choose>
+                            <div class="pull-left">
+                                <a href="#"
+                                   class="btn btn-default"><i class="fas fa-user-lock"></i>&nbsp;Account</a>
+                            </div>
 
-                    <%--</c:otherwise>
-                </c:choose>--%>
+                            <div class="pull-right">
+                                <a href="$#"
+                                   class="btn btn-default"><i class="fa fa-power-off"></i>&nbsp;Log Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <%--</c:when>--%>
+
+                <%--<c:otherwise>--%>
+                <c:choose>
+                    <c:when test="${signedIn}">
+                        <li class="nav-item"><a class="nav-link" href="signOut">Log&nbsp;Out</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="nav-item"><a class="nav-link" href="signUpDirector">Sign&nbsp;Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="signInDirector">Log&nbsp;In</a></li>
+                    </c:otherwise>
+
+                </c:choose>
+
+                <%--</c:otherwise>
+            </c:choose>--%>
 
             </ul>
 

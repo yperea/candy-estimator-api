@@ -46,7 +46,7 @@
 <body class="text-center">
 
 
-<form class="form-signin" action="signinController" method="POST">
+<form class="form-signin" action="signinController" method="GET">
     <img class="mb-4" src="../style/img/candyestimatorIcon75x75.png.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 

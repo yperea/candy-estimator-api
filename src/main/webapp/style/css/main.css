@@ -146,3 +146,37 @@ footer {
     z-index: 1030;
     border-bottom: 1px solid #d2d6da;
 }
+
+pre {
+    font-size: 1.2em;
+    color: ghostwhite;
+    background-color: rgba(25, 25, 25, .2);
+}
+
+#sampleImplementation, #parameters, #sampleResponses, #sampleURL, #documentationDescription {
+    margin-top: 50px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+#documentationMenu {
+    font-size: 1.2em;
+    text-align: left;
+    background-color: rgba(75, 75, 75, .25);
+    border: 1px solid #d2d6da;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+#documentationDescription {
+    margin-top: 100px;
+}
