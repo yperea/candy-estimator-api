@@ -1,7 +1,9 @@
 package com.pkty.controller;
 
+import com.pkty.application.EntityManager;
 import com.pkty.domain.User;
 import com.pkty.persistance.EntityDAO;
+import com.pkty.shared.ManagerFactory;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.io.*;
+import java.util.List;
 
 /**
  * A simple servlet to sign in the user.
@@ -21,7 +24,7 @@ import java.io.*;
  */
 
 @WebServlet(
-        urlPatterns = {"/public/signupController"}
+        urlPatterns = {"/signupController"}
 )
 
 public class signupController extends HttpServlet {
@@ -33,8 +36,9 @@ public class signupController extends HttpServlet {
         String uName = req.getParameter("userName");
         String pWord = req.getParameter("password");
         String confirm = req.getParameter("confirmation");
-        EntityDAO<User> userDao = new EntityDAO<>(User.class);
-        LocalDate today = LocalDate.now();
+        EntityManager<User> userEntityMgr = ManagerFactory.getManager(User.class);
+
+        List<User> users;
         User newUser = null;
         Boolean userOkay = false;
         String responseMessage = "Sorry, Please Try Again";
@@ -51,10 +55,15 @@ public class signupController extends HttpServlet {
             }
 
             if (userOkay) {
-                newUser = new User(fName, lName, uName, pWord);
-                newUserId = userDao.insert(newUser);
 
-                responseMessage = "SUCCESS!";
+                users = userEntityMgr.getListEquals("username", uName);
+
+                if (users.size() == 0) {
+                    newUser = new User(fName, lName, uName, pWord);
+                    userEntityMgr.create(newUser);
+
+                    responseMessage = "SUCCESS!";
+                }
 
             }
 
@@ -63,7 +72,7 @@ public class signupController extends HttpServlet {
             e.printStackTrace();
             //LOG MESSAGE
         }
-        resp.setHeader("Refresh", "3; URL=signin.jsp");
+        resp.setHeader("Refresh", "3; URL=signInDirector");
         resp.setContentType("text/html");
         PrintWriter  out  = resp.getWriter();
         out.print("<h1>" + responseMessage + "</h1>");

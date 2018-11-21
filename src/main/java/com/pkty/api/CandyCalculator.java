@@ -7,6 +7,8 @@ import com.pkty.application.EntityManager;
 import com.pkty.application.GeoLifeManager;
 import com.pkty.domain.User;
 import com.pkty.domain.ChildrenPopulation;
+import com.pkty.domain.EstimateHistory;
+
 import com.pkty.entity.CandyToBuy;
 import com.pkty.persistance.EntityDAO;
 import com.pkty.shared.ManagerFactory;
@@ -37,6 +39,7 @@ public class CandyCalculator {
         Integer avgcandy = Integer.parseInt(request.getParameter("avgcandy"));
         String candyToBuyJSON;
         String errorMessage;
+        CandyToBuy candyToBuy;
 
         if (username == null || username.equals("")) {
             errorMessage = "{\"error\":\"no given username\"}";
@@ -64,7 +67,6 @@ public class CandyCalculator {
 
         List<User> users = userDao.getByPropertyEqual("username", username);
         User user = users.get(0);
-        //User user = (User) ManagerFactory.getManager(User.class).get(username);
 
         //Validate User with apikey
         if (user.getApiKey().equals(apikey)) {
@@ -72,20 +74,19 @@ public class CandyCalculator {
             GeoLifeManager geoLifeManager = new GeoLifeManager("/geoLife.properties");
             ChildrenPopulation childrenPopulation =
                     geoLifeManager.getChildrenPopulationByAddress(address, countryAbberv);
-            CandyToBuy candyToBuy = new CandyToBuy(childrenPopulation.getCount(), avgcandy);
+            candyToBuy = new CandyToBuy(childrenPopulation.getCount(), avgcandy);
             candyToBuy.CalculateCandyToBuy();
             candyToBuyJSON = objectMapper.writeValueAsString(candyToBuy);
+
+            EntityManager<EstimateHistory> estimateHistoryManager;
+            estimateHistoryManager = ManagerFactory.getManager(EstimateHistory.class);
+
+            EstimateHistory newEstimate = new EstimateHistory(candyToBuy.getCandyPerKid(), candyToBuy.getKidCount(), address, countryAbberv, user);
+            EstimateHistory insertedEstimate = estimateHistoryManager.create(newEstimate);
+
         } else {
             candyToBuyJSON = objectMapper.writeValueAsString("Incorrect api key");
         }
-
-//        Store the info in the database with the Entity Dao
-//        EstimateHistory estimateHistory = new EstimateHistory();
-//        estimateHistory.set
-//        EntityManager<EstimateHistory> historyManager = ManagerFactory.getManager(EstimateHistory.class);
-//        EstimateHistory.create();
-//        String candyToBuyJSON = objectMapper.writeValueAsString("here is the calculation i want to return");
-
         return Response.status(200).entity(candyToBuyJSON).build();
     }
 
