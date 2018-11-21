@@ -1,16 +1,16 @@
 # Halloween Candy Estimator
 
 ### Problem Statement
-Trouble knowing how many candies to buy this Holloween? Would you like to be able to tell your customers how many candies to buy?
+Trouble knowing how much candy to buy this Halloween? Would you like to be able to tell your customers how much candy to buy?
 
-From today the problem is in the past, because the **Halloween Candy Estimator API** has arrived.
+Today, that problem is in the past, because the **Halloween Candy Estimator API** has arrived.
 
 #### Objective
-Build a JSON REST service which allow users entering an address and the number of candies they expect to give every child, and the service will return how many candies are needed to buy for halloween.
+Build a JSON REST service which allow users to enter an address and the number of candies they expect to give every child. The service will return how much candy is needed for Halloween.
 
 Our application returns, in a **JSON** format, the estimated amount of candy based on the number of children under 14 living near the address entered.
 
-For this users only have to register at [Halloween Candy Estimator API](http://18.191.31.27:8080/candy-estimator) and we give you an API KEY to get access to the service.
+For this, users only have to register at [Halloween Candy Estimator API](http://18.191.31.27:8080/candy-estimator) and we give you an API KEY to get access to the service.
 
 ### Project Technologies/Techniques
 * Security/Authentication
