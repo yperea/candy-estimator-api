@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="/candy-estimator" scope="session" />
+<c:set var="title" value="Halloween Candy Estimator" scope="session" />
+
 <!DOCTYPE html><%--
   Created by IntelliJ IDEA.
   User: student
@@ -9,7 +12,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%@include file="../shared/head.jsp"%>
+    <%@include file="../shared/meta.jsp"%>
+
+    <link rel="icon" href="${root}/style/img/candyestimatorIcon32x32.png">
+
+    <title>${title}</title>
+
+    <%@include file="../shared/cdn-css.jsp"%>
+
+    <!-- Bootstrap validator CSS -->
+    <link href="${root}/style/css/form-validation.css" rel="stylesheet" />
+    <!-- Bootstrap Carousel CSS -->
+    <%--<link href="${root}/style/css/carousel.css" rel="stylesheet" />--%>
+    <!-- Bootstrap Dashboard CSS -->
+    <link href="${root}/style/css/dashboard.css" rel="stylesheet" />
+    <!-- Bootstrap Cover CSS -->
+    <%--<link href="${root}/style/css/cover.css" rel="stylesheet" />--%>
+    <!-- Candy Estimator Style Sheet -->
+    <link rel="stylesheet" href="${root}/style/css/main.css" />
 </head>
 
 <body>
@@ -21,16 +41,18 @@
 
 <c:choose>
 <c:when test="${hasKey}">
-    <h1 style="margin-top:10px">Your API Key: ${userKey}</h1>
+    <h1 class = "text-center" style="margin-top:10px">Your API Key: ${userKey}</h1>
 </c:when>
 <c:otherwise>
-    <h1 style="margin-top:10px">Your API Key:</h1>
+    <h1 class = "text-center"  style="margin-top:10px">Your API Key:</h1>
     <h3>Need a key? Click <a href="keyController">here</a> to get one!</h3>
 </c:otherwise>
 </c:choose>
 
+<%--
 <br />
 <br />
+
 <h2>Test Our Service!</h2>
 
 <div class="col-lg-2"></div>
@@ -52,6 +74,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+--%>
 
 </body>
 </html>

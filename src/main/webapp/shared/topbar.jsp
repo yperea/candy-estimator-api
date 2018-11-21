@@ -3,7 +3,7 @@
     <div class="container">
 
         <a class="navbar-brand nav-link" href="${root}">
-            <img src="${root}/style/img/candyestimatoricon75x75.png" class="my-logo"/> Halloween Candy Estimator API
+            <img src="${root}/style/img/candyestimatorIcon75x75.png" class="my-logo"/> Halloween Candy Estimator API
         </a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +47,7 @@
                                 <c:choose>
                                     <c:when test="${account.signed != null}" >
                 --%>
+<%--
                 <li class="dropdown user-menu">
                     <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img alt="Profile Picture" class="user-image" src="${root}/style/img/male.jpg" />
@@ -58,8 +59,8 @@
                                  class="img-circle"
                                  src="${root}/style/img/male.jpg" />
                             <p>
-                                <%--${account.firstName} ${account.lastName}--%>
-                                <br/><small>(<%--${account.username}--%>)</small>
+                                &lt;%&ndash;${account.firstName} ${account.lastName}&ndash;%&gt;
+                                <br/><small>(&lt;%&ndash;${account.username}&ndash;%&gt;)</small>
                             </p>
                         </li>
 
@@ -77,6 +78,7 @@
                         </li>
                     </ul>
                 </li>
+--%>
                 <%--</c:when>--%>
 
                 <%--<c:otherwise>--%>
@@ -93,7 +95,7 @@
 
                 <%--</c:otherwise>
             </c:choose>--%>
-
+                <li class="nav-item"><a class="nav-link" href="${root}/documentation">API Documentation</a></li>
             </ul>
 
 

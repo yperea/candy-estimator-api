@@ -29,7 +29,7 @@ public class CandyCalculator {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("")
-    public Response getUsersList(@Context HttpServletRequest request)
+    public Response getCandyData(@Context HttpServletRequest request)
             throws JsonProcessingException, IOException{
 
         String username = request.getParameter("username");

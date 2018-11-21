@@ -46,7 +46,7 @@
 <body class="text-center">
 
 
-<form class="form-signin" action="signinController" method="GET">
+<form class="form-signin" action="signinController" method="POST">
     <img class="mb-4" src="../style/img/candyestimatorIcon75x75.png.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
@@ -79,7 +79,7 @@
     -->
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">Don't have an account?
-        <a href="#">Sign Up</a> | <a href="#">Home</a>
+        <a href="signUpDirector">Sign Up</a> | <a href="${root}">Home</a>
     </p>
 </form>
 
