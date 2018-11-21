@@ -1,7 +1,9 @@
 package com.pkty.controller;
 
+import com.pkty.application.EntityManager;
 import com.pkty.domain.User;
 import com.pkty.persistance.EntityDAO;
+import com.pkty.shared.ManagerFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -22,31 +24,34 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/public/signinController"}
+        urlPatterns = {"/signinController"}
 )
 public class signinController extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //add user
         String uName = req.getParameter("userName");
         String pWord = req.getParameter("password");
         HttpSession session = req.getSession();
-        EntityDAO<User> userDao = new EntityDAO<>(User.class);
+        EntityManager<User> userDao = ManagerFactory.getManager(User.class);
         LocalDate today = LocalDate.now();
-        List<User> theUsers = null;
+        List<User> theUsers;
+        User currentUser = null;
+        String apiKey;
         Boolean userOkay = false;
         String url = "/public/home.jsp";
         String responseMessage = null;
+        Boolean hasKey = false;
         try {
 
             if (uName.isEmpty() || pWord.isEmpty()) {
                 responseMessage = "You must enter a username and password";
             } else {
-                theUsers = userDao.getByPropertyEqual("username", uName);
+                theUsers = userDao.getListEquals("username", uName);
 
                 if(theUsers.size() == 1){
                     for (User u : theUsers){
-
+                        currentUser = u;
                         if (u.getPassword().equals(pWord)) {
                             userOkay = true;
                         } else {
@@ -61,8 +66,21 @@ public class signinController extends HttpServlet {
 
             if (userOkay) {
                 session.setAttribute("loggedIn", userOkay);
-                session.setAttribute("currentUser", uName);
+                session.setAttribute("currentUser", currentUser);
+                apiKey = currentUser.getApiKey();
+
+
+                if (apiKey != null && !apiKey.isEmpty()){
+                    hasKey = true;
+                    req.setAttribute("hasKey", hasKey);
+                    req.setAttribute("userKey", apiKey);
+
+                } else {
+                    req.setAttribute("hasKey", hasKey);
+                }
+
                 req.setAttribute("signedIn", userOkay);
+
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                 dispatcher.forward(req, resp);
 
