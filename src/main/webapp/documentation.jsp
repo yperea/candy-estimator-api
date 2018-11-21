@@ -33,8 +33,12 @@
 
         <!-- Example URL -->
         <div id="sampleURL">
-            <h3>Sample URL</h3>
+            <h3>Sample URL to get the Candy Estimate</h3>
             <pre>http://18.191.31.27:8080/candy-estimator/service/candycalculator?username=tdombrowski&apikey=supersecret1&avgcandy=2&country=USA&address=2935%20Broadbridge%20Ave,%20Stratford,%20CT</pre>
+
+            <h3>Sample URL to get a user estimates history</h3>
+            <pre>http://18.191.31.27:8080/candy-estimator/service/candycalculator/history?username=tdombrowski&apikey=supersecret1</pre>
+
         </div>
 
         <!-- Parameters -->
@@ -104,6 +108,11 @@
                 <h4>Normal Response</h4>
                 <pre class="pre-scrollable">${functionalResponse}</pre>
             </div>
+            <div>
+                <h4>History Response</h4>
+                <pre class="pre-scrollable">${historyCallResponse}</pre>
+            </div>
+
             <div>
                 <h4>Failed Response: Missing a Parameter</h4>
                 <pre class="pre-scrollable" >${missingUsernameResponse}</pre>
